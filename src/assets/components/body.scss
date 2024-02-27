@@ -1,0 +1,98 @@
+.body-main {
+  width: calc(100% - 60px);
+  height: calc(100% - 150px);
+  // border: 5px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: middle;
+  .chatbox {
+    border-radius: 50px;
+    padding: 30px;
+    background-color: rgb(127, 127, 127);
+    border: solid 1px rgb(95, 19, 165);
+    height: 700px;
+    overflow-x: scroll;
+    width: 600px;
+    .message-in {
+      display: flex;
+      // justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      p{
+        margin: 0;
+        color: white;
+      }
+    }
+    .message-out {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      p{
+        margin: 0;
+        color: white;
+      }
+    }
+    .outgoing-message {
+      display: flex;
+      align-items: center;
+      height: 20px;
+      float: right;
+      width: 50%;
+      background-color: #dff9fb; /* Set a background color for the current user's messages */
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 4px;
+      p{
+        color: black;
+      }
+    }
+
+    .incoming-message {
+      p{
+        color: black;
+      }
+      display: flex;
+      align-items: center;
+      height: 20px;
+      float: left;
+      min-width: 50%;
+      background-color: #f1f0f0; /* Set a background color for other user's messages */
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 4px;
+    }
+  }
+  .input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      margin-top: 20px;
+      width: 80%;
+      height: 30px;
+      border-radius: 50px;
+      padding-left: 15px;
+      font-size: 20px;
+    }
+    button {
+      margin-top: 15px;
+      height: 40px;
+      width: 70px;
+      font-weight: 300;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: white;
+      border: solid 1px white;
+      border-radius: 5px;
+    }
+  }
+}

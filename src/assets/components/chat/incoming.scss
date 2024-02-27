@@ -1,0 +1,18 @@
+.incoming-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.body {
+  background-color: #ddd; /* Light gray background for the incoming message body */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.user {
+  color: #555; /* Dark gray color for the user information */
+  font-size: 12px;
+}
