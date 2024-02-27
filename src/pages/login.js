@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { Input, Card, Button } from "antd";
 import UserService from "../services/main/user.service";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const clear = () => {
     setPassword("");
     setUsername("");
   };
+
+  const register = () =>{
+    navigate('/register')
+  }
 
   const login = async () => {
     console.log(password, username);
@@ -45,7 +51,7 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></Input>
           <p>
-            wanna register? <a href="/register">click here</a>
+            wanna register? <a onClick={register}>click here</a>
           </p>
           <Button onClick={login}> continue</Button>
         </Card>

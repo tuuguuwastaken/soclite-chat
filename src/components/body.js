@@ -15,7 +15,7 @@ const MainBody = () => {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    if (!user) {
+    if (!user && user !== null) {
       navigate("/login");
     } else {
       setUser(user);

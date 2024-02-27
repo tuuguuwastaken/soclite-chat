@@ -15,6 +15,10 @@ const Register = () => {
     setVPassword("");
   };
 
+  const login = () =>{
+    navigate('/login')
+  }
+
   const register = async () => {
     console.log(password, username);
     if (password !== Vpassword) {
@@ -62,7 +66,7 @@ const Register = () => {
             onChange={(e) => setVPassword(e.target.value)}
           ></Input>
           <p>
-            Already have an account? <a href="/login">click here</a>
+            Already have an account? <a onClick={login}>click here</a>
           </p>
           <Button onClick={register}> continue</Button>
         </Card>

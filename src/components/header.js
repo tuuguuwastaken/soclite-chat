@@ -7,9 +7,9 @@ const HeaderMain = () => {
   
   const logout = () =>{
     try{
-      localStorage.setItem('user',null)
+      localStorage.removeItem('user')
       this.$nextTick(function () {
-      navigate("/")
+      navigate("/login")
       });
     } catch (e) {
       console.log(e)
