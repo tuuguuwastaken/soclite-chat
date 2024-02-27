@@ -67,11 +67,10 @@ const MainBody = () => {
       if (isSocketConnected) {
         socketRef.current.emit("chat message", { body: message, user: user });
         
-        // Update the local state
-        // setMessages((prevMessages) => [
-        //   ...prevMessages,
-        //   { body: message, user: user },
-        // ]);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { body: message, user: user },
+        ]);
 
         setMessage("");
       } else {
