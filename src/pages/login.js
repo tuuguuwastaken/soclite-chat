@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input, Card, Button } from "antd";
 import UserService from "../services/main/user.service";
 import { useNavigate } from "react-router-dom";
@@ -7,18 +7,25 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+
+  useEffect(() => {
+    console.log(user);
+    if(user && user !== null){
+      navigate('/')
+    }
+  }, []);
 
   const clear = () => {
     setPassword("");
     setUsername("");
   };
 
-  const register = () =>{
-    navigate('/register')
-  }
+  const register = () => {
+    navigate("/register");
+  };
 
   const login = async () => {
-    console.log(password, username);
     try {
       const r = await UserService.loginUser({
         username: username,
@@ -29,6 +36,7 @@ const LoginPage = () => {
         return 0;
       }
       localStorage.setItem("user", username);
+      navigate('/')
       clear();
     } catch (e) {
       alert("something went wrong please try again later and contact tuugii");
